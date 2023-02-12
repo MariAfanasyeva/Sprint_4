@@ -31,9 +31,10 @@ public class OrderPage {
     private final By colourOfSamokat2 = By.xpath(".//input[@id = 'grey']");
     private final By orderButtonOfOrderPage = By.xpath(".//button[@class = 'Button_Button__ra12g Button_Middle__1CSJM']");
     private final By confirmOrderButton = By.xpath(".//div[@class = 'Order_Buttons__1xGrp']//button[text()='Да']");
+
     //private final By modalWindowOrderSuccess = By.xpath(".//div[@class = 'Order_Modal__YZ-d3']");
     //создаем драйвер
-    public OrderPage (WebDriver driver) {
+    public OrderPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -52,7 +53,7 @@ public class OrderPage {
     }
 
     //заполняем вторую форму с первым комплектом тестовых данных
-    public void setInputs2(){
+    public void setInputs2() {
         new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.elementToBeClickable(orderForm));
         driver.findElement(dateOfOrder).click();
@@ -83,7 +84,7 @@ public class OrderPage {
     }
 
     //заполняем вторую форму со вторым комплектом тестовых данных
-    public void setInputs2NewData(){
+    public void setInputs2NewData() {
         new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.elementToBeClickable(orderForm));
         driver.findElement(dateOfOrder).click();
@@ -99,3 +100,4 @@ public class OrderPage {
         String text = driver.findElement(By.className("Order_ModalHeader__3FDaJ")).getText();
         System.out.println("Текст модального окна с номером совершённого заказа: " + text);
     }
+}
